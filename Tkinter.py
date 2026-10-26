@@ -1,8 +1,9 @@
 import sqlite3
 import tkinter as tk
-from tkinter import messagebox  
+from tkinter import messagebox
 
 DB_NAME = "nilai_siswa.db"
+
 
 def init_db():
     conn = sqlite3.connect(DB_NAME)
@@ -22,6 +23,7 @@ def init_db():
     conn.commit()
     conn.close()
 
+
 def simpan_ke_db(nama, biologi, fisika, inggris, prediksi):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
@@ -34,6 +36,7 @@ def simpan_ke_db(nama, biologi, fisika, inggris, prediksi):
     )
     conn.commit()
     conn.close()
+
 
 def Submit():
     nama = entry_nama.get().strip()
@@ -56,3 +59,28 @@ def Submit():
             "Gagal", "Nilai mata pelajaran harus berupa angka bulat!"
         )
         return
+
+    bio = int(val_bio)
+    fis = int(val_fis)
+    ing = int(val_ing)
+
+    if bio > fis and bio > ing:
+        prediksi = "Kedokteran"
+    elif fis > bio and fis > ing:
+        prediksi = "Teknik"
+    elif ing > bio and ing > fis:
+        prediksi = "Bahasa"
+    else:
+        prediksi = "Tidak Dapat Diprediksi (Nilai Tertinggi Sama)"
+
+    label_hasil.config(text=f"Hasil Prediksi: {prediksi}")
+
+    simpan_ke_db(nama, bio, fis, ing, prediksi)
+    messagebox.showinfo(
+        "Sukses", "Data siswa dan hasil prediksi berhasil disimpan ke database!"
+    )
+
+    entry_nama.delete(0, tk.END)
+    entry_biologi.delete(0, tk.END)
+    entry_fisika.delete(0, tk.END)
+    entry_inggris.delete(0, tk.END)
