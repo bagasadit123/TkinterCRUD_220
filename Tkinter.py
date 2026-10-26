@@ -100,3 +100,23 @@ label_judul.pack(pady=10)
 
 frame_input = tk.Frame(root)
 frame_input.pack(pady=10)
+
+lbl_nama = tk.Label(frame_input, text="Nama Siswa:")
+lbl_nama.grid(row=0, column=0, sticky="w", pady=5, padx=5)
+entry_nama = tk.Entry(frame_input, width=25)
+entry_nama.grid(row=0, column=1, pady=5, padx=5)
+
+lbl_biologi = tk.Label(frame_input, text="Nilai Biologi:")
+lbl_biologi.grid(row=1, column=0, sticky="w", pady=5, padx=5)
+entry_biologi = tk.Entry(frame_input, width=25)
+entry_biologi.grid(row=1, column=1, pady=5, padx=5)
+
+lbl_fisika = tk.Label(frame_input, text="Nilai Fisika:")
+lbl_fisika.grid(row=2, column=0, sticky="w", pady=5, padx=5)
+entry_fisika = tk.Entry(frame_input, width=25)
+entry_fisika.grid(row=2, column=1, pady=5, padx=5)
+
+lbl_inggris = tk.Label(frame_input, text="Nilai Inggris:")
+lbl_inggris.grid(row=3, column=0, sticky="w", pady=5, padx=5)
+entry_inggris = tk.Entry(frame_input, width=25)
+entry_inggris.grid(row=3, column=1, pady=5, padx=5)
