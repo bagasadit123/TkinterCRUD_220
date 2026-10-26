@@ -120,3 +120,15 @@ lbl_inggris = tk.Label(frame_input, text="Nilai Inggris:")
 lbl_inggris.grid(row=3, column=0, sticky="w", pady=5, padx=5)
 entry_inggris = tk.Entry(frame_input, width=25)
 entry_inggris.grid(row=3, column=1, pady=5, padx=5)
+
+btn_submit = tk.Button(
+    root, text="Submit Nilai", command=Submit, bg="#4CAF50", fg="white", font=("Arial", 10, "bold")
+)
+btn_submit.pack(pady=15)
+
+label_hasil = tk.Label(
+    root, text="Hasil Prediksi: -", font=("Times New Roman", 11, "bold")
+)
+label_hasil.pack(pady=5)
+
+root.mainloop()
