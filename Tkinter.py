@@ -90,3 +90,13 @@ def Submit():
 root = tk.Tk()
 root.title("Aplikasi Prediksi Fakultas")
 root.geometry("420x430")
+
+label_judul = tk.Label(
+    root,
+    text="Aplikasi Prediksi Fakultas Siswa",
+    font=("Times New Roman", 14, "bold"),
+)
+label_judul.pack(pady=10)
+
+frame_input = tk.Frame(root)
+frame_input.pack(pady=10)
