@@ -84,3 +84,9 @@ def Submit():
     entry_biologi.delete(0, tk.END)
     entry_fisika.delete(0, tk.END)
     entry_inggris.delete(0, tk.END)
+
+    init_db()
+
+root = tk.Tk()
+root.title("Aplikasi Prediksi Fakultas")
+root.geometry("420x430")
