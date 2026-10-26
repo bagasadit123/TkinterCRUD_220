@@ -1,3 +1,5 @@
 import sqlite3
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox  
+
+DB_NAME = "nilai_siswa.db"
